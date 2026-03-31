@@ -1,0 +1,111 @@
+body {
+    background: linear-gradient(135deg, #ffe6f0, #ffccff);
+    font-family: 'Arial', sans-serif;
+    color: #4b004b;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Glowing heading */
+h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 5px #ffb3d9,0 0 10px #ff80bf,0 0 20px #ff4da6;
+    animation: glow 2s infinite alternate;
+}
+@keyframes glow {
+    0%,100% { text-shadow:0 0 5px #ffb3d9,0 0 20px #ff4da6; }
+    50% { text-shadow:0 0 10px #ff80bf,0 0 30px #ff3399; }
+}
+
+/* Letter box */
+.letter {
+    background-color: rgba(255, 240, 245, 0.9);
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    text-align:left;
+    font-size:1.1rem;
+    line-height:1.6;
+}
+.letter b{color:#ff3366;}
+.letter i{color:#ff66b3;}
+
+/* Typewriter message */
+#love-message {
+    font-size:2rem;
+    color:#ff3366;
+    margin:20px 0;
+    font-weight:bold;
+}
+#love-message::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+@keyframes blink {
+    0%,50%,100% {opacity:1;}
+    25%,75% {opacity:0;}
+}
+
+/* Floating Hearts */
+.heart {
+    font-size: 2rem;
+    position:absolute;
+    animation: float 5s ease-in-out infinite;
+}
+.floating{bottom:0;}
+@keyframes float {
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-150px);}
+    100%{transform:translateY(0);}
+}
+
+/* Couple image */
+.couple-img {
+    max-width:300px;
+    width:80%;
+    border-radius:50%;
+    margin:20px auto;
+    display:block;
+    box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Heart burst animation */
+.burst-heart {
+    position:absolute;
+    font-size:30px;
+    pointer-events:none;
+    animation: burst 1.5s ease-out forwards;
+}
+@keyframes burst {
+    0%{opacity:1; transform:scale(0);}
+    50%{transform:scale(1.5);}
+    100%{opacity:0; transform:scale(2);}
+}
+
+@media(max-width:600px){
+    h1{font-size:2.2rem;}
+    .letter{font-size:1rem;}
+}
+/* Image row */
+.image-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    box-shadow: #38021d;
+}
+
+.side-img {
+    width: 500%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    margin: 10px 0;
+}
