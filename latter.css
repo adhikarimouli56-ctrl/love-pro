@@ -111,22 +111,92 @@ h1 {
 }
 
 
-/* Medium devices (tablets, 601px - 992px) */
+/* ===== Plug-and-Play Responsive CSS ===== */
+
+/* General container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Images responsive */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Flexbox helper */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Cards and sections */
+.card, .section {
+  box-sizing: border-box;
+  padding: 1rem;
+}
+
+/* Buttons */
+button, .btn, input[type="submit"], a.btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* ===== Media Queries ===== */
+
+/* Phones (small devices) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  header, nav, footer {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column !important;
+    gap: 0.5rem;
+    padding: 0;
+    margin: 0;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .card, .section {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Tablets (medium devices) */
 @media (min-width: 601px) and (max-width: 992px) {
   body {
     font-size: 15px;
   }
 
   nav ul {
-    flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
-  .service-cards, .cards {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1.5rem;
+  .flex {
+    flex-direction: row;
+    gap: 1rem;
   }
 
   .card {
@@ -135,7 +205,7 @@ h1 {
   }
 }
 
-/* Large devices (desktops, 993px and up) */
+/* Desktops (large devices) */
 @media (min-width: 993px) {
   body {
     font-size: 16px;
@@ -146,9 +216,9 @@ h1 {
     justify-content: flex-end;
   }
 
-  .service-cards, .cards {
+  .flex {
     flex-direction: row;
-    justify-content: space-between;
+    gap: 2rem;
   }
 
   .card {
@@ -157,9 +227,7 @@ h1 {
   }
 }
 
-/* Optional: hide scrollbars on mobile for clean look */
-@media (max-width: 600px) {
-  ::-webkit-scrollbar {
-    display: none;
-  }
+/* Optional: smooth images and videos */
+img, video {
+  transition: all 0.3s ease;
 }
