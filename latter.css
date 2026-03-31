@@ -109,3 +109,57 @@ h1 {
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     margin: 10px 0;
 }
+
+
+/* Medium devices (tablets, 601px - 992px) */
+@media (min-width: 601px) and (max-width: 992px) {
+  body {
+    font-size: 15px;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .service-cards, .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .card {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+}
+
+/* Large devices (desktops, 993px and up) */
+@media (min-width: 993px) {
+  body {
+    font-size: 16px;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .service-cards, .cards {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .card {
+    flex: 1 1 30%;
+    max-width: 30%;
+  }
+}
+
+/* Optional: hide scrollbars on mobile for clean look */
+@media (max-width: 600px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
